@@ -1,0 +1,349 @@
+<style type="text/css">
+
+body 
+{
+	 margin: 0;
+	 padding: 0;
+	 overflow: hidden;
+	 height: 100%; 
+	 max-height: 100%; 
+	 line-height: 1.5em;
+     font-weight: bold;
+     font-family: arial, helvetica, geneva, sans-serif;
+     color: #000000;
+     background: #665E67; 
+}
+div.TitleImageBox
+{
+ 
+  	width:30;
+  	height:20;
+	font:20pt/36pt;
+ 	top: 0px;
+	left: 0px;
+}
+
+
+/*The Pictsweet Logo right justified */
+div.logo 
+{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+/* UUUUUUUUUUUUUUUUUUUUUUUUUU TAB  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+div.tabs 
+{
+    position: absolute;
+    Top: 51px;
+    left: 1em;
+    background: #0080ff;
+    margin: 0 0 0 0;
+    padding: 0em 0em 0em 0em;
+    text-align: center;
+    border-bottom: 1px solid #000066;
+    border-collapse: collapse;
+    border-radius: 15px 15px 25px 25px;
+    white-space: nowrap;
+    color: #5961a0; /*#EDEDED;*/
+    z-index: 2;
+}
+
+div.tabs a 
+{
+    /* The normal, unselected tabs. They are all links */
+    background: #1B30ED;
+/*    background: transparent;*/
+    border-color: #8CACBB;
+    border-width: 1px; 
+    border-style: solid solid none solid;
+    border-radius: 15px 15px 25px 25px;
+    color: #EDEDED;
+    font-weight: normal;
+    height: 2em;
+    margin: 5px 5px 0px 0px;
+    padding: 0px 15px 0px 15px;
+/*    text-transform: lowercase;*/
+    text-decoration: none;
+}
+
+div.tabs form 
+{
+    /* The normal, unselected tabs. They are all links */
+    background: #1B30ED;
+    color: #1B30ED;
+    font-weight: normal;
+    height: 1.2em;
+    margin-right: 0.5em;
+    padding: 0em 2em;
+/*    text-transform: lowercase;*/
+    text-decoration: none;
+
+}
+
+
+div.tabs a.selected 
+{
+/*  The selected tab. There's only one of this */
+    background: #005c99;
+    color: #EDEDED;
+    border: 1px solid #8CACBB;
+    border-bottom: 1px solid #000066;
+    font-weight: normal;
+
+}
+
+div.tabs a.plain 
+{
+    background: transparent;
+    color: #EDEDED;
+    border-color: #8CACBB;
+    border-width: 1px ;
+    border-style solid solid none solid;
+    font-weight: normal;
+
+}
+
+div.tabs a:hover 
+{
+    background: #99ccff;
+    border-color: #8CACBB;
+    border-bottom-color: #DEE7EC;
+    color: #436976;
+}
+///  test for help  
+div.help 
+{
+    position: absolute;
+    Top: 0px;
+    right: 1em;
+    background: #0080ff;
+    margin: 0 0 0 0;
+    padding: 0em 0em 0em 0em;
+    text-align: center;
+    border-bottom: 1px solid #000066;
+    border-collapse: collapse;
+    border-radius: 15px 15px 25px 25px;
+    white-space: nowrap;
+    color: #5961a0; /*#EDEDED;*/
+    z-index: 2; 
+}
+div.tabs a.help 
+{
+/*  The selected tab. There's only one of this */
+    background: #ffff33;
+    color: #ff6600;
+    border: 1px solid #8CACBB;
+    border-bottom: 1px solid #000066;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+
+
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+/* UUUUUUUUUUUUUUUUUUUUUUUUUU personalBar  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+div.personalBar 
+{
+/*  Bar with personalized menu (user preferences, favorites etc) */
+    border-collapse:collapse;
+    position: absolute;
+    Top: 75px;
+    left: 0em;
+	width: 100%;
+    background:  #000066;
+    color: #DEDEDE;
+    border-top: 1px solid #8CACBB;
+    padding: 0 0 0 0;
+/*    text-transform: lowercase;*/
+    font-size: 10px;
+    height: 20px;
+    z-index: 1;
+}
+
+div.personalBar a 
+{
+    background-color: transparent;
+    color: #436976;
+    font-weight: normal;
+    margin-left: .5;
+    text-decoration: none;
+}
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+
+.location 
+{
+    /* The path bar, including breadcrumbs and add to favorites */
+    position: absolute;
+    left: 2em;
+    top: -0.1em;
+    font-size: 14px;
+/*    text-transform: lowercase;*/
+    text-align:left ;
+}
+
+.auth 
+{
+    /* Bar with personalized menu (user preferences, favorites etc) */
+    position: absolute;
+    text-align:right;
+    right: 2em;
+    top: -0.1em;
+    font-size: 14px;
+}
+.bar_data
+{
+    /* Bar with job data */
+    text-align:center;
+    bottom: 10em;
+    font-size: 14px;
+	color: #ff5c33;
+	
+}
+
+
+		
+		
+		#header 
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100px; 
+			overflow: hidden; /* Disables scrollbars on the header frame. To enable scrollbars, change "hidden" to "scroll" */
+			background: #FFff;
+		}
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+/* UUUUUUUUUUUUUUUUUUUUUUUUUU NAV  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+		
+		#nav 
+		{
+			position: absolute; 
+			top: 95px; 
+			left: 0; 
+			bottom: 0;
+			width: 175px;
+			overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
+			background: #80ccff; 		
+		}
+		
+		.nav 
+		{
+			position: absolute; 
+			top: 0px; 
+			left: 0; 
+			bottom: 0;
+			width: 180px;
+			overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
+			background: #80ccff; 		
+		}
+		nav ul 
+		{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			font-size: 16px;
+		}
+		
+		nav ul a 
+		{
+			color: darkgreen;
+			text-decoration: none;
+		}
+
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+
+		#logo 
+		{
+			padding:10px;
+		}
+		
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+		main 
+		{
+			position: fixed;
+			top: 95px; /* Set this to the height of the header */
+			left: 180px; 
+			right: 0;
+			bottom: 0;
+			overflow: hidden; /* Disables scrollbars on the header frame. To enable scrollbars, change "hidden" to "scroll" */
+			background: #DDFEff;
+		}
+		.main 
+		{
+			position: fixed;
+			top: 95px; /* Set this to the height of the header */
+			left: 180px; 
+			right: 0;
+			bottom: 0;
+			overflow: hidden; /* Disables scrollbars on the header frame. To enable scrollbars, change "hidden" to "scroll" */
+			background: #DDFEff;
+		}
+		
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+		.innertube 
+		{
+			margin: 15px; /* Provides padding for the content */
+		}
+		
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+		p 
+		{
+			color: #555;
+		}
+
+				
+		/*IE6 fix*/
+		* html body
+		{/* Set the first value to the height of the header and last value to the width of the nav */
+			padding: 200px 0 0 230px; 
+		}
+		
+		* html main
+		{ 
+			height: 100%; 
+			width: 100%; 
+		}
+
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+/* UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU   */
+/*  SPINNER  */		
+/* Center the loader */
+#loader 
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin 
+{
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin 
+{
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+		
+</style>
