@@ -13,5 +13,5 @@ $title_tabs[]=array('nav' => '@../m_system', 'text' => 'User', 'security' => arr
 
 
 
-
+RETURN $title_tabs
 ?>

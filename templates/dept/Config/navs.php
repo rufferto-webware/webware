@@ -36,6 +36,6 @@ $nav_links['nav'][]=$nav_nav='page4';
 		$nav_links[$nav_nav][$nav_heading][]=array(page =>"fourm",text=>'Form Page',OnClick=>"", security=>array(array(webware_app,level)));
 		$nav_links[$nav_nav][$nav_heading][]=array(page =>"table_class",text=>'class Table',OnClick=>"", security=>array(array(webware_app,level)));
 
-
+RETURN $nav_links;
 
 ?>

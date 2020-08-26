@@ -149,8 +149,8 @@ class ww_db
 /// Print Error FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 	function print_error($msg)
 	{
-		$this->errdesc = mysql_error();
-		$this->errno = mysql_errno();
+		$this->errdesc = mysqli_error($this->link);
+		$this->errno = mysqli_errno($this->link);
 
 		$messagehtml = "Error in the DB in $this->appname: $msg\n<BR/>";
 		$messagehtml.= "error mySQL	        : $this->errdesc\n<BR/>";

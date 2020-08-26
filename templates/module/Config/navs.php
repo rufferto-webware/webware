@@ -21,5 +21,5 @@ $nav_links['nav'][]=$nav_nav='manage';
 		$nav_links[$nav_nav][$nav_heading][]=array('page' => "add_user", 'text' => 'Add User', 'OnClick' => "", 'security' => array(array('app'=>'','level'=>'')));
 		$nav_links[$nav_nav][$nav_heading][]=array('page' => "edit_user", 'text' => 'Edit User', 'OnClick' => "", 'security' => array(array('app'=>'','level'=>'')));
 
-
+RETURN $nav_links;
 ?>

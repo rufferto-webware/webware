@@ -24,5 +24,5 @@ $nav_links['nav'][]=$nav_nav='manage';
 		$nav_links[$nav_nav][$nav_heading][]=array('page' =>"add_group", 'text'=>'Add New Group', 'OnClick'=> "", 'security' => array(array('app'=>'system_build','level'=>'admin')));
 		$nav_links[$nav_nav][$nav_heading][]=array('page' =>"edit_group", 'text'=>'Edit Group', 'OnClick'=> "", 'security' => array(array('app'=>'system_build','level'=>'admin')));
 
-
+RETURN $nav_links;
 ?>

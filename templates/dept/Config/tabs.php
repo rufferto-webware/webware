@@ -14,5 +14,5 @@ $title_tabs[]=array(nav =>'page4',text=>'Long Page',security=>array(array(webwar
 
 
 
-
+RETURN $title_tabs;
 ?>
