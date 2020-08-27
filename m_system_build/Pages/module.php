@@ -1,6 +1,5 @@
 <?PHP
 session_start();
-include_once($_SESSION['file_root'].'/lib/Class_db.php');
 include_once($_SESSION['file_root'].'/lib/Common.inc.php');
 include_once($_SESSION['file_root'].'/lib/Function_system.inc.php');
 $DB= new ww_db;
@@ -8,6 +7,15 @@ $DB= new ww_db;
 echo "<!DOCTYPE html>\n";
 
 echo "<h2> Manage Modules in System </h2>";
+
+if(!empty($_GET['ref']) )
+{
+$_POST['f_submit']='Add';
+$_POST['f_mID']=sec_db_get_modID(substr($_GET['ref'],3 ) );
+//var_dump($_POST);
+}
+
+
 
 if(!empty($_POST['m_submit']))
 {
@@ -45,7 +53,7 @@ if(!empty($_POST['f_submit']))
 	{
 		$var=$DB->fetch_array($res);
 
-	echo "<TABLE width='100%'><TR>";
+	echo "<TABLE width='2000'><TR>";
 		echo "<TD width='33%'><center><H1> Module Info</h1><TABLE >";
 		echo "<form method='POST'>" ;
 		echo "<input type='hidden' name='f_submit' value='edit'>";
@@ -62,14 +70,17 @@ if(!empty($_POST['f_submit']))
 
 		echo "<TD width='33%'><center><H1>Tabs Info (".$var['link'].") </h1><TABLE BORDER=\"1\" CELLSPACING=\"2\" CELLPADDING=\"10\">";
 		$tabs_var=system_read_tabs($var['link']);
+		$_SESSION['tabs_var']=$tabs_var;
 	//	var_dump($tabs_var);
 		
        if(is_array($tabs_var))
        {
-       	echo "<TR> <TH>url Nav=</TH><TH> Name </TH><TH> Security </TH>  </TR>";
+       	echo "<TR> <TH> Order </TH><TH> Name </TH><TH> Nav= </TH><TH> Security </TH>  </TR>";
+       	$tab_index=0;
 	       foreach($tabs_var as $tabs_v)
 	       {
-	       	echo "<TR> <TD> ".$tabs_v['nav']." </TD><TD> ".$tabs_v['text']." </TD><TD> ";
+	       	echo "<TR> <TD> <input type=\"button\" value=\"Edit\" onClick=\"window.open('edit_tabs.php?tab_index=$tab_index&mod=".$var['link']."','mywindow','scrollbars=1,width=800,height=600')\" onMouseOver=\"this.style.cursor='hand';return true;\">
+	       			".($tab_index+1)." </TD><TD> ".$tabs_v['text']." </TD><TD> ".$tabs_v['nav']." </TD><TD> ";
        		if(is_array($tabs_v['security']))
 	       		foreach($tabs_v['security'] as $sec_v)
 	       		{
@@ -80,16 +91,17 @@ if(!empty($_POST['f_submit']))
 	       		}
 	       		
 	       	echo " </TD>  </TR>";
-	       	
+	       	$tab_index++;
 	       }
     	 }
     	 else	
     	  echo " <b> No Tabs  listed </b>";	
-				
+		echo "<input type=\"button\" value=\"Add\" onClick=\"window.open('add_tab.php?mod=".$var['link']."','mywindow','scrollbars=1,width=800,height=600')\" onMouseOver=\"this.style.cursor='hand';return true;\">";		
 		echo "</TABLE></TD>";
 		
 		echo "<TD width='33%'><center><H1>Side Nav Info</h1><TABLE BORDER=\"1\" CELLSPACING=\"2\" CELLPADDING=\"10\">";
 		$nav_var=system_read_nav($var['link']);
+		$_SESSION['nav_var']=$nav_var;
 		//var_dump($nav_var);		
 
        if(is_array($nav_var['nav']))

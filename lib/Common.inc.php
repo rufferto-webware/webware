@@ -16,7 +16,7 @@ time_elapsed_string($datetime, $full = false) ---- returns string of time elapes
 get_user_name($f_uID)   ----   returns full username from user ID
 display_other_options($f_table,$f_type,$f_select="") ---- displays option from other tables
 display_options_array($f_array,$f_value,$f_disp,$f_select="") --- displays option from array
-
+array_change_key($a_array,$o_oldKey,$o_newKey) --- will swap out keys within an array
 
 
 
@@ -162,6 +162,23 @@ function display_options_array($f_array,$f_value,$f_disp,$f_select="")
 		echo" >".$row[$f_disp]."</option>";
 	}
 	return;
+}
+
+///MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+/// will swap out keys within an array
+function array_change_key($a_array,$o_oldKey,$o_newKey)
+{
+///  error trap inputs	
+  if( ! array_key_exists( $o_oldKey, $a_array ) && !empty($o_newKey) )
+		{
+        return $array;
+     	}
+
+    $keys = array_keys( $a_array );
+    $keys[ array_search( $o_oldKey, $keys ) ] = $o_newKey;
+
+    return array_combine( $keys, $a_array );
+
 }
 
 ?>
