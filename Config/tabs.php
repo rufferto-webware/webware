@@ -15,5 +15,5 @@ $title_tabs[]=array('nav' =>'@./m_system','text' => 'User', 'security' => array(
 
 
 
-
+return $title_tabs;
 ?>

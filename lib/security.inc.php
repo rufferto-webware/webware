@@ -17,6 +17,7 @@ function sec_db_get_user_info($f_uid) ---- returns user info
 function sec_db_get_group_info($f_id='ALL')  ----returns all group info or one certon one
 function sec_db_get_group_rights($f_gID) --- returns array of all security listed in DB for group
 function sec_db_get_mod_info($f_id='ALL') ---- returns all module info or one certon one
+function sec_db_get_sec_level() ---- returns all levels from system_other table
 
 
 
@@ -399,6 +400,33 @@ function sec_db_get_mod_info($f_id='ALL')
 	$sql="SELECT * FROM `system_webware` WHERE 1 ";
 	if($f_id!='ALL')
 		$sql.=" AND `id`= '$f_id' ";
+	
+		$res=$DB->query($sql);
+		$num=$DB->numrows($res);
+
+		if($num == 0)
+		{
+			return NULL;
+		}
+		if($num > 0)
+		{ 
+			$ret_var=array();
+			for($x_=0;$x_<$num;$x_++)
+			{
+				$ret_var[]=$DB->fetch_array($res);
+			}
+			return $ret_var;
+			
+		}
+	return NULL;
+}
+///GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+///GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+function sec_db_get_sec_level()  // ---- returns all levels from system_other table
+{
+	$DB= new ww_db;
+	
+	$sql="SELECT * FROM `system_other` WHERE `type` ='level' ";
 	
 		$res=$DB->query($sql);
 		$num=$DB->numrows($res);

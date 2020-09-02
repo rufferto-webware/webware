@@ -39,5 +39,5 @@ $nav_links['nav'][]=$nav_nav='page4';
 		$nav_links[$nav_nav][$nav_heading][]=array('page' => "table_class", 'text' => 'class Table', 'OnClick' => "", 'security' => array(array('app'=>'','level'=>'')));
 
 
-
+return $nav_links;
 ?>

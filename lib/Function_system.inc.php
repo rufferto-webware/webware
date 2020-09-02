@@ -19,11 +19,13 @@ function system_read_tabs($t_link)
 {
 	if ($t_link=="" || empty($t_link))
 				return NULL;
+		if($t_link=='/')
+				$t_link='';
 	$file=$_SESSION['file_root'].$t_link.'/Config/tabs.php';
 	if(false===file_exists($file))	
 				return '\n !!!! File Error !!!!! \n';
 	$ret_array = include $file;
-				
+	
 	return $ret_array;
 
 }
@@ -33,6 +35,8 @@ function system_write_tabs($t_mod,$t_array)
 {
 	if ($t_mod=="" || empty($t_mod) || !is_array($t_array))
 				return NULL;
+		if($t_mod=='/')
+				$t_mod='';
 	$file=$_SESSION['file_root'].$t_mod.'/Config/tabs.php';
 	if(false===file_exists($file)	)			
 				return '\n !!!! File Error !!!!! \n';
@@ -42,7 +46,6 @@ function system_write_tabs($t_mod,$t_array)
 	 $tab_f_header="<?PHP\n\n\n\n".'$'."title_tabs=array();\n\n/// usage array(tab_page,tab_text,security_array(array(webware_app,level)))\n\n";	
 	 $tab_f_footer="\n\n\nReturn ".'$'."title_tabs;\n\n?>";	
 	  fwrite($h_file,$tab_f_header);
-
 
 	  for($t=0;$t < count($t_array);$t++)
 	  {
@@ -68,6 +71,8 @@ function system_read_nav($t_link)
 {
 	if ($t_link=="" || empty($t_link))
 				return NULL;
+		if($t_link=='/')
+				$t_link='';
 	$file=$_SESSION['file_root'].$t_link.'/Config/navs.php';
 	if(false===file_exists($file))	
 				return '\n !!!! File Error ('.$file.')!!!!! \n';

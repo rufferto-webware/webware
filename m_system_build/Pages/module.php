@@ -95,7 +95,7 @@ if(!empty($_POST['f_submit']))
 	       }
     	 }
     	 else	
-    	  echo " <b> No Tabs  listed </b>";	
+    	  echo " <b><H2> No Tabs  listed </H2></b><br><br>";	
 		echo "<input type=\"button\" value=\"Add\" onClick=\"window.open('add_tab.php?mod=".$var['link']."','mywindow','scrollbars=1,width=800,height=600')\" onMouseOver=\"this.style.cursor='hand';return true;\">";		
 		echo "</TABLE></TD>";
 		
@@ -107,7 +107,7 @@ if(!empty($_POST['f_submit']))
        if(is_array($nav_var['nav']))
        {
        	$t_counter=1;
-       	echo "<TR> <TH>Tab </TH><TH> Info </TH>  </TR>";
+       	echo "<TR> <TH>Tab(nav) </TH><TH> Info </TH>  </TR>";
 	       foreach($nav_var['nav'] as $nav_v)
 	       {
 	       	echo "<TR> <TD> ".$nav_v." (default page= ".$nav_var[$nav_v]['default_page'].") </TD><TD> ";
